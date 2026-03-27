@@ -95,7 +95,10 @@ async function seedSuperAdmin() {
 
 const app = express();
 
-app.use(helmet({ crossOriginResourcePolicy: { policy: "cross-origin" } }));
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  contentSecurityPolicy: false,  // Désactivé car le frontend est un fichier HTML inline
+}));
 app.use(express.json({ limit: "1mb" }));
 
 app.use(cors({
