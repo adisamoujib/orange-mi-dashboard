@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  orange-mi-api:
+    build: .
+    container_name: orange_mi_backend
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    environment:
+      PORT: 3001
+      # ⚠️ CHANGEZ CES VALEURS AVANT DE DÉPLOYER
+      API_KEY: ${API_KEY:-CHANGEZ_MOI}
+      DB_PATH: /app/data/dashboard.db
+      # Mettez l'URL de votre SharePoint ici
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-*}
+    volumes:
+      # Persistance de la base SQLite
+      - orange_mi_data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3001/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  orange_mi_data:
+    driver: local

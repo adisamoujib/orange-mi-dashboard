@@ -1,0 +1,3 @@
+{"ts":"2026-03-22T12:37:11.550Z","action":"INSERT","table":"activities","id":"57c8df42-e406-4e14-bc87-a3d606bf28fa","ua":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"}
+{"ts":"2026-03-26T23:19:21.916Z","action":"LOGIN","table":"users","id":"58c74fe3-e290-4e70-a1bc-9ad2d26cdabf","userId":"58c74fe3-e290-4e70-a1bc-9ad2d26cdabf"}
+{"ts":"2026-03-26T23:22:27.857Z","action":"DELETE","table":"activities","id":"57c8df42-e406-4e14-bc87-a3d606bf28fa","userId":"58c74fe3-e290-4e70-a1bc-9ad2d26cdabf"}

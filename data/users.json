@@ -1,0 +1,13 @@
+[
+  {
+    "id": "58c74fe3-e290-4e70-a1bc-9ad2d26cdabf",
+    "email": "superadmin@orange.ci",
+    "passwordHash": "$2a$10$eyht2rmJuPT9gXCEdAyYtecG74XLKFRxROU4dmNNJ8x37gYrVC89.",
+    "role": "superadmin",
+    "collaborateur": null,
+    "nom": "Super Administrateur",
+    "active": true,
+    "mustChangePassword": false,
+    "createdAt": "2026-03-26T23:12:16.564Z"
+  }
+]
