@@ -432,6 +432,19 @@ app.get("/api/export", authenticate, requireAdmin, (req, res) => {
   res.json({ exportedAt: now(), activities, monetisations, users: users.map(safeUser) });
 });
 
+// ─── SERVE FRONTEND HTML ──────────────────────────────────────────────────────
+
+// Sert le fichier Orange_MI_Dashboard.html à la racine
+const HTML_FILE = path.join(__dirname, "public", "index.html");
+app.use(express.static(path.join(__dirname, "public")));
+app.get("/", (req, res) => {
+  if (fs.existsSync(HTML_FILE)) {
+    res.sendFile(HTML_FILE);
+  } else {
+    res.send(`<h2>🟠 Orange MI Backend opérationnel</h2><p>Fichier dashboard non trouvé dans /public/index.html</p>`);
+  }
+});
+
 // ─── ERROR HANDLER ────────────────────────────────────────────────────────────
 
 app.use((err, req, res, _next) => { console.error(err.message); res.status(500).json({ error: "Erreur serveur interne." }); });
